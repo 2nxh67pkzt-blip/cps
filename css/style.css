@@ -3,6 +3,7 @@
     --color-cm-border: #B8FFEC;
     --color-cm-text: #7E7E82;
     --color-bg: #F8F8F8;
+    --color-title-text: #1B1C21;
 
 }
 * {
@@ -21,6 +22,10 @@ body {
 .icon--hide {
     display: none !important;
     
+}
+
+.header__divider--hidden {
+    display: none;
 }
 
 .header__container {
@@ -69,20 +74,26 @@ body {
     all: unset;
 }
 
-.title::before {
+
+
+.title__h1::before {
     content: '';
     display: block;
     position: absolute;
     width: 3px;
     height: 40px;
     background-color: var(--color-title-border);
-    left: -22px;
+    left: -20px;
     border-radius: 2px;
 }
 
-.title {
+.title__h1 {
     position: relative;
     margin-bottom: 20px;
+}
+
+.title_icon--hidden {
+    display: none;
 }
 
 .nav {
@@ -108,7 +119,7 @@ body {
 }
 
 .img {
-    width: 265px;
+    width: 285px;
     height: 170px;
     box-sizing: border-box;
 }
@@ -130,7 +141,6 @@ body {
 
     @media (min-width: 768px) {
         
-
         .icon--hide {
             display: flex !important;
             justify-content: flex-end;
@@ -138,8 +148,32 @@ body {
             gap: 1rem;
         }
 
-        .img {
+        .header__divider--hidden {
+            display: flex;
+        }
+
+        .header__divider {
             display: none;
+        }
+
+        .text {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .text__container {
+            max-width: 50%;
+        }
+
+        .text__container__paragraph {
+            display: flex;
+        }
+
+        .img {
+            display: block;
+            width: 360px;
+            height: 260px;
         }
     }
 
@@ -151,8 +185,31 @@ body {
             display: flex;
         }
 
-        .header__menu {
+        .header__container {
             display: none;
+            border-bottom: 0px;
+        }
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .title__btn {
+            font-weight: 500;
+            color: var(--color-title-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .title_icon--hidden {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
         }
 
         .text {
